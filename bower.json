@@ -1,0 +1,25 @@
+{
+  "name": "tatty-prompt",
+  "version": "0.1.0",
+  "main": "index.js",
+  "authors": [
+    "mattstyles <matt@veryfizzyjelly.com>"
+  ],
+  "keywords": [
+    "es6",
+    "prompt",
+    "input"
+  ],
+  "license": "WTFPL",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "dist"
+  ],
+  "dependencies": {
+    "tatty-screen-base-module": "~1.0.1"
+  }
+}

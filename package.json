@@ -1,0 +1,25 @@
+{
+  "name": "tatty-prompt",
+  "version": "0.1.0",
+  "description": "Creates a hidden input field and handles input",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Matt Styles @personalurban",
+  "keywords": [
+    "es6",
+    "prompt",
+    "input"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mattstyles/tatty-prompt"
+  },
+  "bugs": {
+    "url": "https://github.com/mattstyles/tatty-prompt/issues"
+  },
+  "license": "WTFPL",
+  "dependencies": {
+  }
+}
