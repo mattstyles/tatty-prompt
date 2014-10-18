@@ -7,6 +7,8 @@ import EventEmitter from '../EventEmitter/index';
  * @event 'focus' fired when input has gained focussed
  * @event 'input' fired with the keycode of the input
  * @event 'execute' fired on an input finish with the value of the input
+ * @event 'delete' specific delete event for backspace
+ * @event 'navigate' fired when arrow keys are pressed
  */
 export default class Prompt extends EventEmitter  {
 
@@ -23,7 +25,11 @@ export default class Prompt extends EventEmitter  {
          * Events
          */
         this.input.addEventListener( 'keypress', function( event ) {
+            this.emit( 'input', String.fromCharCode( event.keyCode ) );
+        }.bind( this ));
 
+
+        this.input.addEventListener( 'keydown', function( event ) {
             // Handle enter
             if ( event.keyCode === 13 ) {
                 event.preventDefault();
@@ -32,7 +38,15 @@ export default class Prompt extends EventEmitter  {
                 return;
             }
 
-            this.emit( 'input', String.fromCharCode( event.keyCode ) );
+            // Handle backspace
+            if ( event.keyCode === 8 ) {
+                this.emit( 'delete' );
+            }
+
+            // Handle arrow keys
+            if ( event.keyCode >= 37 && event.keyCode <= 40 ) {
+                this.emit( 'navigate', event.keyCode );
+            }
         }.bind( this ));
 
 
